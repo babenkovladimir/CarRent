@@ -2,6 +2,7 @@ package mvc.controller;
 
 import mvc.dto.CarDto;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 
 import org.springframework.core.env.Environment;
@@ -25,7 +26,8 @@ import javax.annotation.Resource;
 @PropertySource(value = "classpath:websocket.properties")
 public class AddCarController {
 
-    @Resource
+   // @Resource
+    @Autowired
     private Environment env;
 
 
@@ -103,7 +105,7 @@ public class AddCarController {
     public ModelAndView addCarToDB_WebSocketsProtokol() {
 
         ModelAndView mav = new ModelAndView();
-        mav.addObject("socketAddres", env.getProperty("carSocket.url"));
+        mav.addObject("sockUrl", env.getProperty("carSocket.url"));
         mav.setViewName("editcardb3");
         System.out.println("сработал контроллер перевода на страничку с сокетами");
         return mav;

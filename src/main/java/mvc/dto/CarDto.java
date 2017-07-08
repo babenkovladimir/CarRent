@@ -33,6 +33,8 @@ public class CarDto {
     @NotNull
    // @Pattern(regexp = "\\d{2,}",message = "{message.power.name.error_}")
     private Integer power;
+    @Size(min = 5, message = "{message.carnumber.name.error")
+    private String carNumber;
 
 
 
@@ -71,6 +73,14 @@ public class CarDto {
         this.power = power;
     }
 
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
     @Override
     public String toString() {
         return "CarDto{" +
@@ -78,6 +88,7 @@ public class CarDto {
                 ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", power=" + power +
+                ", carNumber='" + carNumber + '\'' +
                 '}';
     }
 }

@@ -27,7 +27,7 @@
     <h2>Adding Car </h2>
 
     <div class="row">
-        <div class="col-sm-6 col-sm-push-3">
+            <div class="col-sm-6 col-sm-push-3">
             <sf:form modelAttribute="car" action="" cssClass="form-horizontal">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Add</div>
@@ -71,6 +71,15 @@
                             </div>
                             <sf:errors path="power" cssClass="error"/>
                         </div>
+
+                        <div class="form-group">
+                            <label for="car.carNumber" class="col-sm-3 control-label"><spring:message
+                                    code="car.carNumber"></spring:message></label>
+                            <div class="col-sm-9">
+                                <sf:input path="carNumber" cssClass="form-control"/>
+                            </div>
+                            <sf:errors path="carNumber" cssClass="error"/>
+                        </div>
                     </div>
 
 
@@ -83,7 +92,6 @@
 </div>
 
 <br/>
-
 
 
 <form action="./">

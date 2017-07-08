@@ -42,6 +42,8 @@
         <sf:errors path="power"/>
     </div>
 
+
+
     <button type="submit" class="btn btn-primary"><spring:message code="auth.submit"/></button>
 </sf:form>
 

@@ -16,16 +16,14 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-framework-version>4.3.7</spring-framework-version>
+        <spring-framework-version>4.3.4.RELEASE</spring-framework-version>
         <spring.data>1.3.4.RELEASE</spring.data>
         <hb.manager>5.2.2.Final</hb.manager>
     </properties>
 
-
     <build>
         <finalName>CarRent</finalName>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -42,17 +40,16 @@
                     <url>http://127.0.0.1:8080/manager/text</url>
                     <username>tomcat</username>
                     <password>tomcat</password>
-
                     <httpsPort>442</httpsPort>
-                    <path>/CarRent</path>
+                    <path>/</path>
                 </configuration>
             </plugin>
-
         </plugins>
-
     </build>
 
+
     <dependencies>
+
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -60,35 +57,32 @@
             <scope>provided</scope>
         </dependency>
 
-
         <dependency>
-
             <groupId>org.springframework</groupId>
-
             <artifactId>spring-core</artifactId>
-
-            <version>4.3.7.RELEASE</version>
-
+            <version>${spring-framework-version}</version>
         </dependency>
-
 
         <dependency>
-
             <groupId>org.springframework</groupId>
-
             <artifactId>spring-web</artifactId>
-
-            <version>4.3.3.RELEASE</version>
-
+            <version>${spring-framework-version}</version>
         </dependency>
 
-        <!--ЗАвисимость для работы с MVC - Без неё ModelAndView не работает-->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring-framework-version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>${spring-framework-version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -96,27 +90,23 @@
             <version>1.2</version>
         </dependency>
 
-
         <dependency>
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
             <version>1.4.0</version>
         </dependency>
 
-<!--Активация вэюсокетов-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>${spring-framework-version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-websocket</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>${spring-framework-version}</version>
         </dependency>
-<!--Конец активации вэбсокетов-->
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -124,27 +114,22 @@
             <version>2.4.1</version>
         </dependency>
 
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.4.1</version>
         </dependency>
 
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>2.4.1</version>
         </dependency>
-
-
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>2.4.1</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -152,20 +137,17 @@
             <version>2.4.1</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>1.11.0.RELEASE</version>
+            <version>${spring.data}</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.2.9.Final</version>
+            <version>${hb.manager}</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -173,40 +155,31 @@
             <version>9.4.1211</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.hateoas</groupId>
             <artifactId>spring-hateoas</artifactId>
             <version>0.21.0.RELEASE</version>
         </dependency>
 
-
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.9.0</version>
-
         </dependency>
 
         <!--test-->
-
-
         <dependency>
-
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
             <scope>test</scope>
-
         </dependency>
-
 
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <version>2.2.0</version>
         </dependency>
-
 
         <dependency>
             <groupId>junit</groupId>
@@ -221,41 +194,35 @@
             </exclusions>
         </dependency>
 
-
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>1.9.5</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>${spring-framework-version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
         </dependency>
+
         <dependency>
-
             <groupId>com.googlecode.json-simple</groupId>
-
             <artifactId>json-simple</artifactId>
-
             <version>1.1</version>
-
         </dependency>
         <dependency>
-
             <groupId>org.projectlombok</groupId>
-
             <artifactId>lombok</artifactId>
-
             <version>1.16.12</version>
-
         </dependency>
 
         <dependency>
@@ -263,29 +230,24 @@
             <artifactId>gson</artifactId>
             <version>2.7</version>
         </dependency>
-        <dependency>
 
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>5.2.4.Final</version>
-
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.8.4.RELEASE</version>
         </dependency>
+
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.25</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-java8</artifactId>
+            <version>${hb.manager}</version>
         </dependency>
-
-
-
-
-
 
 
     </dependencies>
